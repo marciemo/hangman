@@ -1,0 +1,5 @@
+require 'rspec'
+require 'player'
+require 'display'
+require 'game'
+require 'wordlist'
