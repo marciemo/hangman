@@ -1,9 +1,10 @@
 class Display
 
-  def initialize(wordlist)
-    @wordlist = wordlist
+  def initialize(word_manager)
+    @word_manager = word_manager
     @picture = []
     make_empty_display
+    @winner = false
   end
 
   def make_empty_display
@@ -57,19 +58,7 @@ class Display
     @picture[8][5] = "\\"
   end
 
-  # def make_empty_display
-  #   @picture[0] =  '    ________________      \n'
-  #   @picture[1] =  '   /\               |     \n'
-  #   @picture[2] =  '   \/               |     \n'
-  #   @picture[3] =  '    |               |     \n'
-  #   @picture[4] =  ' -------            |     \n'
-  #   @picture[5] =  '    |               |     \n'
-  #   @picture[6] =  '    |               |     \n'
-  #   @picture[7] =  '   /\               |     \n'
-  #   @picture[8] =  '  /  \              |     \n'
-  #   @picture[9] =  '              ______|_____\n'
-  #   @picture[10] = '                          \n'
-  #   @picture[11] = '                          \n'
-  # end
-
+  def winner?
+    @winner
+  end
 end
