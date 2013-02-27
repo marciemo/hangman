@@ -26,7 +26,7 @@ class Display
   end
 
   def to_s
-    "#{@picture.join}\n\n#{@word_manager}\n"
+    @picture.join
   end
 
   def add_body_part
@@ -48,7 +48,6 @@ class Display
     end
   end
 
-private
 
   def add_head
     @picture[1][3] = "/"
