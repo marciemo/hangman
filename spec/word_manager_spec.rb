@@ -38,9 +38,7 @@ describe WordManager do
       word_manager.guess('t')
       word_manager.winner?.should be true
     end
-    it 'returns guess again message if letter has already been used/guessed'
-
-
+    
   end
 
 end
