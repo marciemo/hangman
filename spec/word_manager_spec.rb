@@ -10,15 +10,16 @@ describe WordManager do
 
   context '#new_word' do
     it 'returns a new word at random from its store' do
-      word_manager = WordManager.new(['another','word'])
-      word_manager.all.should include(word_manager.new_word)
+      words = ['another','word']
+      word_manager = WordManager.new(words)
+      words.include?(word_manager.new_word).should be_true
     end
   end
 
   context '#display' do
     it 'displays a number of spaces corresponding to the letters in a selected word' do
       Array.any_instance.stub(:sample).and_return('cat')
-      word_manager = WordManager.new([''])
+      word_manager = WordManager.new(['cat'])
       word_manager.to_s.should eq '_ _ _'
     end
 

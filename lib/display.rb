@@ -1,4 +1,4 @@
-class Display
+class Hangman
 
   def initialize(word_manager)
     @word_manager = word_manager
