@@ -73,17 +73,15 @@ describe Display do
   #     display.to_s.should eq output
   #   end
 
-
   end
 
-  
-
-
   context '#game_results' do
-    it 'determines if player has won the game' do
+    it 'determines if player has lost the game' do
       words = WordManager.new(['dog'])
       display = Display.new(words)
-      display.winner?.should be false
+      display.loser?.should be false
+      7.times { |i| words.guess('a') }
+      display.loser?.should be true
     end
   end
 end

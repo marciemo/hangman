@@ -4,7 +4,10 @@ class Display
     @word_manager = word_manager
     @picture = []
     make_empty_display
-    @winner = false
+  end
+
+  def loser?
+    @word_manager.wrong_guesses.length == 7
   end
 
   def make_empty_display
@@ -45,9 +48,13 @@ class Display
     end
   end
 
+private
+
   def add_head
-    @picture[1][3] = "/\\"
-    @picture[2][3] = "\\/"
+    @picture[1][3] = "/"
+    @picture[1][4] = "\\"
+    @picture[2][3] = "\\"
+    @picture[2][4] = "/"
   end
 
   def add_neck
@@ -55,11 +62,11 @@ class Display
   end
 
   def add_left_arm
-    @picture[4][1] = "----"
+    4.times { |i| @picture[4][1+i] = "-" }
   end
 
   def add_right_arm
-    @picture[4][5] = "---"
+    3.times { |i| @picture[4][5+i] = "-" }
   end
 
   def add_trunk
@@ -75,13 +82,5 @@ class Display
   def add_right_leg
     @picture[7][4] = "\\"
     @picture[8][5] = "\\"
-  end
-
-  def loser?
-    @word_manager.wrong_guesses.length == 7
-  end
-
-  def winner?
-    @winner
   end
 end
